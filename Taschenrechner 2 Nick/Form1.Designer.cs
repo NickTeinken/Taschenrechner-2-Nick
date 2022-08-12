@@ -47,6 +47,7 @@
             this.button15 = new System.Windows.Forms.Button();
             this.buttonKlAuf = new System.Windows.Forms.Button();
             this.buttonKlZu = new System.Windows.Forms.Button();
+            this.buttonHoch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -236,11 +237,23 @@
             this.buttonKlZu.UseVisualStyleBackColor = true;
             this.buttonKlZu.Click += new System.EventHandler(this.buttonKlZu_Click);
             // 
+            // buttonHoch
+            // 
+            this.buttonHoch.Location = new System.Drawing.Point(249, 312);
+            this.buttonHoch.Name = "buttonHoch";
+            this.buttonHoch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonHoch.Size = new System.Drawing.Size(41, 36);
+            this.buttonHoch.TabIndex = 19;
+            this.buttonHoch.Text = "^";
+            this.buttonHoch.UseVisualStyleBackColor = true;
+            this.buttonHoch.Click += new System.EventHandler(this.buttonHoch_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 384);
+            this.Controls.Add(this.buttonHoch);
             this.Controls.Add(this.buttonKlZu);
             this.Controls.Add(this.buttonKlAuf);
             this.Controls.Add(this.button15);
@@ -288,5 +301,6 @@
         private Button button15;
         private Button buttonKlAuf;
         private Button buttonKlZu;
+        private Button buttonHoch;
     }
 }

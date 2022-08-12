@@ -12,6 +12,8 @@ namespace Taschenrechner_2_Nick
         int IndexKlZu;
         int zähler;
         int zähler2;
+        int potenz;
+        double rechnungg;
 
 
 
@@ -107,6 +109,22 @@ namespace Taschenrechner_2_Nick
         private void buttonEqual_Click(object sender, EventArgs e)
         {
             list1 = tb1.Text.Split(null).ToList();
+            for(int i = 0; i < list1.Count; i++)
+            {
+                if (list1[i].Contains("^"))
+                {
+                    potenz = Int32.Parse(list1[i + 1]);
+                    for (int j = 0; j < potenz; j++)
+                    {
+                         rechnungg = double.Parse(list1[i - 1]) * double.Parse(list1[i - 1]);
+                        list1[i - 1] = Convert.ToString(rechnungg);
+                    }
+                    
+                    list1.RemoveRange(i, 2);
+                    
+
+                }
+            }
 
             for (int y = 0; y < list1.Count; y++)
             {
@@ -301,7 +319,10 @@ namespace Taschenrechner_2_Nick
             tb1.AppendText(" )");
         }
 
-
+        private void buttonHoch_Click(object sender, EventArgs e)
+        {
+            tb1.AppendText(" ^ ");
+        }
     }
 }
 
