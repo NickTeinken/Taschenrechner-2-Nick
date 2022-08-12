@@ -124,7 +124,7 @@ namespace Taschenrechner_2_Nick
                     if (list1[k].Contains(")"))
                     {
                         Klammer = 0;
-                        list1.RemoveRange(k, zähler2);
+                        list1.RemoveAt(k);
                         break;
                     }
 
@@ -136,7 +136,8 @@ namespace Taschenrechner_2_Nick
                     }
                     else if (Klammer == 1)
                     {
-                        if (list1[k].Contains("(")){
+                        if (list1[k].Contains("("))
+                        {
                             Klammer = 0;
                             zähler2++;
                             break;
@@ -198,7 +199,7 @@ namespace Taschenrechner_2_Nick
                         j = 0;
 
                     }
-                    
+
                 }
                 list1[IndexKlAuf] = list2[0];
                 list2.Clear();
@@ -273,46 +274,13 @@ namespace Taschenrechner_2_Nick
             }
             tb2.AppendText(list1[0]);
         }
-                
 
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            Lösung = 0;
+            tb2.Clear();
+            tb1.Clear();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                private void buttonClear_Click(object sender, EventArgs e)
-                {
-                    Lösung = 0;
-                    tb2.Clear();
-                    tb1.Clear();
-             
             Klammer = 0;
             IndexKlAuf = 0;
             IndexKlZu = 0;
@@ -324,18 +292,18 @@ namespace Taschenrechner_2_Nick
         }
 
 
-                private void buttonKlAuf_Click(object sender, EventArgs e)
-                {
-                    tb1.AppendText("( ");
-                }
-                private void buttonKlZu_Click(object sender, EventArgs e)
-                {
-                    tb1.AppendText(" )");
-                }
-
-
-            }
+        private void buttonKlAuf_Click(object sender, EventArgs e)
+        {
+            tb1.AppendText("( ");
         }
-    
+        private void buttonKlZu_Click(object sender, EventArgs e)
+        {
+            tb1.AppendText(" )");
+        }
 
-    
+
+    }
+}
+
+
+
